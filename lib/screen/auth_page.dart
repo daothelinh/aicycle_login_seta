@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'auth_controller.dart';
-
+import 'login_page.dart';
 class AuthPage extends GetView<AuthController> {
   final double appBarHeight = 144;
 
@@ -58,7 +58,7 @@ class AuthPage extends GetView<AuthController> {
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
         appBar: appbar,
-        //body: LoginPage(),
+        body: LoginPage(),
       ),
     );
   }
