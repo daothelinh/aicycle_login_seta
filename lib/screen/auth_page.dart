@@ -1,8 +1,10 @@
+import 'package:aicycle_login_seta/string/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'auth_controller.dart';
 import 'login_page.dart';
+
 class AuthPage extends GetView<AuthController> {
   final double appBarHeight = 144;
 
@@ -33,11 +35,11 @@ class AuthPage extends GetView<AuthController> {
             height: 16,
           ),
           Text(
-            " Chào mừng bạn đến với ",
+            AppStrings.welcomeText,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20,
+              fontSize: 18,
               //fontStyle: FontStyle.italic,
             ),
           ),
@@ -45,7 +47,7 @@ class AuthPage extends GetView<AuthController> {
             height: 16,
           ),
           Text(
-            "AI Cycle App",
+            AppStrings.appName,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 30,
@@ -58,7 +60,7 @@ class AuthPage extends GetView<AuthController> {
       onTap: () => Get.focusScope!.unfocus(),
       child: Scaffold(
         appBar: appbar,
-        body: LoginPage(),
+        body: const LoginPage(),
       ),
     );
   }

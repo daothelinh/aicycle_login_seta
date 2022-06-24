@@ -1,3 +1,4 @@
+import 'package:aicycle_login_seta/string/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,16 +34,16 @@ class LoginPage extends StatelessWidget {
                         // controller: usernameController,
                         keyboardType: TextInputType.phone,
                         decoration: const InputDecoration(
-                          hintText: "Số điện thoại",
+                          hintText: AppStrings.phone,
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.all(20),
                         ),
                         validator: (String? string) {
                           if (string!.isEmpty) {
-                            return " Xin đăng nhập lại ";
+                            return AppStrings.errorEmpty;
                           }
                           if (string.length < 9 || string.length > 11) {
-                            return "Số điện thoại không đúng";
+                            return AppStrings.errorPhone;
                           }
                           return null;
                         },
@@ -59,22 +60,22 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: TextFormField(
-                        // controller: ,
+                        // controller: passwordController ,
                         style: const TextStyle(
                           fontSize: 17,
                         ),
                         keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
-                          hintText: "Mật khẩu",
+                          hintText: AppStrings.password,
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.all(20),
                         ),
                         validator: (String? string) {
                           if (string!.isEmpty) {
-                            return "Mật khẩu đăng nhập sai";
+                            return AppStrings.errorEmpty;
                           }
                           if (string.length < 6) {
-                            return "Mật khẩu đăng nhập không đúng kí tự";
+                            return AppStrings.errorPassword;
                           }
                           return null;
                         },
@@ -91,7 +92,7 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 child: CupertinoButton(
                   child: Text(
-                    "Quên mật khẩu",
+                    AppStrings.forgetPassword,
                     style: TextStyle(
                       color: Colors.blue,
                     ),
@@ -109,7 +110,7 @@ class LoginPage extends StatelessWidget {
                 style:
                     ElevatedButton.styleFrom(minimumSize: const Size(350, 50)),
                 child: const Text(
-                  "Đăng Nhập",
+                  AppStrings.logIn,
                   style: TextStyle(fontSize: 17),
                 ),
                 onPressed: () {})
