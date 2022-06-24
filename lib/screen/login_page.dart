@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -78,6 +76,7 @@ class LoginPage extends StatelessWidget {
                           if (string.length < 6) {
                             return "Mật khẩu đăng nhập không đúng kí tự";
                           }
+                          return null;
                         },
                       ),
                     )
@@ -106,15 +105,14 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Container(
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(minimumSize: Size(350, 50)),
-                  child: const Text(
-                    "Đăng Nhập",
-                    style: TextStyle(fontSize: 17),
-                  ),
-                  onPressed: () {}),
-            )
+            ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(minimumSize: const Size(350, 50)),
+                child: const Text(
+                  "Đăng Nhập",
+                  style: TextStyle(fontSize: 17),
+                ),
+                onPressed: () {})
           ],
         ),
       ),
